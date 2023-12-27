@@ -1,6 +1,5 @@
 var c = 0;
 var held = 0;
-p5.disableFriendlyErrors = true;
 document.oncontextmenu = () => false;
 
 class College {
