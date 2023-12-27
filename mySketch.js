@@ -66,7 +66,7 @@ class College {
 	}
 }
 function setColleges() {
-	mit = new College('mit', s/16, s/8, loadImage('mit.png'));
+	mit = new College('mit', s/16, s/8, loadImage('assets/mit.png'));
 	columbia = new College('columbia', s/10, s/10, loadImage('assets/columbia.png'));
 	uchicago = new College('uchicago', s/10, s/10, loadImage('assets/uchicago.png'));
 	harvard = new College('harvard', s/10.575, s/9, loadImage('assets/harvard.png'));
