@@ -88,7 +88,7 @@ function setColleges() {
 }
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-  w = windowWidth/2;
+  	w = windowWidth/2;
 	h = windowHeight/2;
 	s = (w+h) * 1.2;
 	setColleges();
