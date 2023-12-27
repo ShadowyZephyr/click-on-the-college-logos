@@ -29,11 +29,11 @@ class College {
 		college.posy = college.posy + college.vely;
 		if (college.posx <= 0 || college.posx >= w * 2) {
 			college.velx = college.velx * -1;
-			college.posx = constrain(college.posx, 0, w*2)
+			college.posx = constrain(college.posx, 0, w*2);
 		}
 		if (college.posy <= 0 || college.posy >= h * 2) {
 			college.vely = college.vely * -1;
-			college.posy = constrain(college.posy, 0, h*2)
+			college.posy = constrain(college.posy, 0, h*2);
 		}
 		if (college.velx <= -s/300 || college.velx >= s/300) {
 			college.velx = college.velx * 0.99;
@@ -95,11 +95,11 @@ function setup() {
 	checkboxList = [];
 	for (let i = 0; i < collegeList.length; i++) {
 		checkbox = createCheckbox(collegeList[i].name, true);
-		checkbox.position(w * 0.05, h * 0.15 + i * 20)
-		checkboxList.push(checkbox)
+		checkbox.position(w * 0.05, h * 0.15 + i * 20);
+		checkboxList.push(checkbox);
 	}
-	let search = createInput('')
-	search.position(w * 0.05, h * 0.05)
+	let search = createInput('');
+	search.position(w * 0.05, h * 0.05);
 	search.input(() => {
 		let v = search.value();
 		let py = h * 0.15;
@@ -108,7 +108,7 @@ function setup() {
 			if (collegeList[i].name.startsWith(v)) {
 				checkbox.position(w * 0.05, py)
 				checkbox.show();
-				py = py + 20
+				py = py + 20;
 			}	else {
 				checkbox.hide();
 			}
@@ -148,7 +148,7 @@ function draw() {
 	}
 	textSize(40);
 	textAlign(CENTER);
-	text('Clicks - ' + str(c), w, h * 0.1)
+	text('Clicks - ' + str(c), w, h * 0.1);
 }
 
 function mouseinRect(x, y, w, h) {
@@ -161,7 +161,7 @@ function mouseinRect(x, y, w, h) {
 
 function mouseClicked() {
 	for (let i = 0; i < collegeList.length; i++) {
-		college = collegeList[i]
+		college = collegeList[i];
 		if(mouseinRect(college.posx, college.posy, college.width, college.height) && college.shown == true) {
 			c += 1;
 			return;
@@ -171,8 +171,8 @@ function mouseClicked() {
 
 function force(d) {
 	if(d < 0) {
-		return (sin(4/(d-1.272))/2) * 0.9 ** -d
+		return (sin(4/(d-1.272))/2) * 0.9 ** -d;
 	} else if (d > 0) {
-		return (sin(4/(d+1.272))/2) * 0.9 ** d
-	} else return 0
+		return (sin(4/(d+1.272))/2) * 0.9 ** d;
+	} else return 0;
 }
