@@ -65,7 +65,27 @@ class College {
 		college.vely = college.vely + force * cy;
 	}
 }
-
+function setColleges() {
+	mit = new College('mit', s/16, s/8, loadImage('mit.png'));
+	columbia = new College('columbia', s/10, s/10, loadImage('assets/columbia.png'));
+	uchicago = new College('uchicago', s/10, s/10, loadImage('assets/uchicago.png'));
+	harvard = new College('harvard', s/10.575, s/9, loadImage('assets/harvard.png'));
+	princeton = new College('princeton', s/10, s/11.5, loadImage('assets/princeton.png'));
+	yale = new College('yale', s/13.25, s/7.5, loadImage('assets/yale.png'));
+	unc = new College('unc', s/12, s/8.2, loadImage('assets/unc chapel hill.png'));
+	wellesley = new College('wellesley', s/15.7, s/10, loadImage('assets/wellesley.png'));
+	stanford = new College('stanford', s/8, s/8, loadImage('assets/stanford.webp'));
+	dartmouth = new College('dartmouth', s/10.25, s/10, loadImage('assets/dartmouth.webp'));
+	tufts = new College('tufts', s/10, s/10, loadImage('assets/tufts.png'));
+	barnard = new College('barnard', s/12, s/9, loadImage('assets/barnard.png'));
+	colby = new College('colby', s/10, s/10, loadImage('assets/colby (1) (1).png'));
+	caltech = new College('caltech', s/10, s/10, loadImage('assets/caltech.png'));
+	brown = new College('brown', s*0.0965, s*0.07, loadImage('assets/brown.gif'));
+	upenn = new College('upenn', s*0.042, s*0.15, loadImage('assets/upenn.png'));
+	cornell = new College('cornell', s*0.1, s*0.1, loadImage('assets/cornell.png'));
+	johnshopkins = new College('johnshopkins', s*0.093, s*0.1, loadImage('assets/jhu.png'));
+	collegeList = [johnshopkins, cornell, brown, upenn, tufts, caltech, barnard, colby, mit, columbia, uchicago, harvard, princeton, yale, unc, wellesley, stanford, dartmouth].sort(compare);
+}
 function setup() {
 	createCanvas(windowWidth, windowHeight);
   w = windowWidth/2;
