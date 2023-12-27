@@ -18,6 +18,8 @@ function setColleges() {
 	yale = new College('yale', s/13.25, s/7.5, loadImage('assets/yale.png'));
 	unc = new College('unc', s/12, s/8.2, loadImage('assets/unc chapel hill.png'));
 	wellesley = new College('wellesley', s/15.7, s/10, loadImage('assets/wellesley.png'));
+	stanford = new College('stanford', s/8, s/8, loadImage('assets/stanford.webp'));
+	dartmouth = new College('dartmouth', s/10.25, s/10, loadImage('assets/dartmouth.webp'));
 	tufts = new College('tufts', s/10, s/10, loadImage('assets/tufts.png'));
 	barnard = new College('barnard', s/12, s/9, loadImage('assets/barnard.png'));
 	colby = new College('colby', s/10, s/10, loadImage('assets/colby (1) (1).png'));
@@ -26,5 +28,5 @@ function setColleges() {
 	upenn = new College('upenn', s*0.042, s*0.15, loadImage('assets/upenn.png'));
 	cornell = new College('cornell', s*0.1, s*0.1, loadImage('assets/cornell.png'));
 	johnshopkins = new College('johnshopkins', s*0.093, s*0.1, loadImage('assets/jhu.png'));
-	collegeList = [johnshopkins, cornell, brown, upenn, tufts, caltech, barnard, colby, mit, columbia, uchicago, harvard, princeton, yale, unc, wellesley].sort(compare);
+	collegeList = [johnshopkins, cornell, brown, upenn, tufts, caltech, barnard, colby, mit, columbia, uchicago, harvard, princeton, yale, unc, wellesley, stanford, dartmouth].sort(compare);
 }
