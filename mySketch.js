@@ -1,7 +1,17 @@
 var c = 0;
 var held = 0;
 document.oncontextmenu = () => false;
-
+function compare(c1, c2) {
+	const name1 = c1.name;
+	const name2 = c2.name;
+	let comparison = 0;
+	if (name1 > name2) {
+		comparison = 1;
+	} else if (name2 > name1) {
+		comparison = -1;
+	}
+	return comparison;
+}
 class College {
 	constructor(name, width, height, sprite) {
 		this.name = name;
