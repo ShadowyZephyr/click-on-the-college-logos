@@ -9,6 +9,59 @@ function compare(c1, c2) {
 	}
 	return comparison;
 }
+class College {
+	constructor(name, width, height, sprite) {
+		this.name = name;
+		this.width = height;
+		this.height = width;
+		this.posx = random(w * 2);
+		this.posy = random(h * 2);
+		this.velx = random(s/-300, s/300);
+		this.vely = random(s/-300, s/300);
+		this.sprite = sprite;
+		this.shown = true;
+	}
+	move() {
+		college.posx = college.posx + college.velx;
+		college.posy = college.posy + college.vely;
+		if (college.posx <= 0 || college.posx >= w * 2) {
+			college.velx = college.velx * -1;
+			college.posx = constrain(college.posx, 0, w*2)
+		}
+		if (college.posy <= 0 || college.posy >= h * 2) {
+			college.vely = college.vely * -1;
+			college.posy = constrain(college.posy, 0, h*2)
+		}
+		if (college.velx <= -s/300 || college.velx >= s/300) {
+			college.velx = college.velx * 0.99;
+		}
+		if (college.vely <= -s/300 || college.vely >= s/300) {
+			college.vely = college.vely * 0.99;
+		}
+	}
+	attract(x, y) {
+		let dx = college.posx - x;
+		let dy = college.posy - y;
+		let distance = dist(college.posx, college.posy, x, y);
+		distance = distance/(w+h) * 20;
+		let f = force(distance);
+		let cx = dx/(abs(dx)+abs(dy));
+		let cy = dy/(abs(dx)+abs(dy));
+		college.velx = college.velx - f * cx;
+		college.vely = college.vely - f * cy;
+	}
+	repel(x, y) {
+		let dx = college.posx - x;
+		let dy = college.posy - y;
+		let distance = dist(college.posx, college.posy, x, y);
+		distance = distance/(w+h) * 20;
+		let force = constrain(1/(2 * distance), (w+h)/-1500, (w+h)/1500);
+		let cx = dx/(abs(dx)+abs(dy));
+		let cy = dy/(abs(dx)+abs(dy));
+		college.velx = college.velx + force * cx;
+		college.vely = college.vely + force * cy;
+	}
+}
 function setColleges() {
 	mit = new College('mit', s/16, s/8, loadImage('mit.png'));
 	columbia = new College('columbia', s/10, s/10, loadImage('assets/columbia.png'));
