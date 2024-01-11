@@ -1,4 +1,8 @@
 var c = 0;
+if (localStorage.getItem('clicks') !== null) {
+	c = localStorage.getItem('clicks');
+	console.log(c);
+}
 var held = 0;
 document.oncontextmenu = () => false;
 function compare(c1, c2) {
@@ -84,7 +88,8 @@ function setColleges() {
 	upenn = new College('upenn', s*0.042, s*0.15, loadImage('assets/upenn.png'));
 	cornell = new College('cornell', s*0.1, s*0.1, loadImage('assets/cornell.png'));
 	johnshopkins = new College('johnshopkins', s*0.093, s*0.1, loadImage('assets/jhu.png'));
-	collegeList = [johnshopkins, cornell, brown, upenn, tufts, caltech, barnard, colby, mit, columbia, uchicago, harvard, princeton, yale, unc, wellesley, stanford, dartmouth].sort(compare);
+	cmu = new College('cmu', s*0.1, s*0.1, loadImage('assets/cmu.png'));
+	collegeList = [johnshopkins, cornell, brown, upenn, tufts, caltech, barnard, colby, mit, columbia, uchicago, harvard, princeton, yale, unc, wellesley, stanford, dartmouth, cmu].sort(compare);
 }
 function setup() {
 	createCanvas(windowWidth, windowHeight);
@@ -164,6 +169,7 @@ function mouseClicked() {
 		college = collegeList[i];
 		if(mouseinRect(college.posx, college.posy, college.width, college.height) && college.shown == true) {
 			c += 1;
+			localStorage.storeItem('clicks', c);
 			return;
 		}
 	}
