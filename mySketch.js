@@ -169,7 +169,7 @@ function mouseClicked() {
 		college = collegeList[i];
 		if(mouseinRect(college.posx, college.posy, college.width, college.height) && college.shown == true) {
 			c += 1;
-			localStorage.storeItem('clicks', c);
+			localStorage.setItem('clicks', c);
 			return;
 		}
 	}
