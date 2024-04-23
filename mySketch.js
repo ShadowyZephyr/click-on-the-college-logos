@@ -1,6 +1,7 @@
 var c = 0;
 if (localStorage.getItem('clicks') !== null) {
 	c = localStorage.getItem('clicks');
+	c = Number(c);
 	console.log(c);
 }
 var held = 0;
